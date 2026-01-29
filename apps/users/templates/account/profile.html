@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+{% block title %}
+    Perfil
+{% endblock title %}
+{% block main %}
+    <h1>Perfil</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url "account_email" %}">Cambiar correo electrónico</a>
+            </li>
+            <li>
+                <a href="{% url "account_change_password" %}">Cambiar contraseña</a>
+            </li>
+            <li>
+                <a href="{% url "account_logout" %}">Cerrar sesión</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock main %}
