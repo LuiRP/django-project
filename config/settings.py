@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "pwa",
     "apps.users",
     "allauth",
     "allauth.account",
@@ -128,7 +130,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 STATIC_URL = "static/"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # CONSOLE_EMAIL_FORCE_ENCODING = "utf-8"
@@ -148,3 +152,5 @@ ACCOUNT_SIGNUP_FORM_CLASS = "apps.users.forms.ExpandedSignUpForm"
 
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "/accounts/profile"
 LOGIN_REDIRECT_URL = "/"
+
+ALLOWED_HOSTS = ["192.168.0.199", "localhost", "127.0.0.1"]
