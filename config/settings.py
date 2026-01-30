@@ -153,4 +153,4 @@ ACCOUNT_SIGNUP_FORM_CLASS = "apps.users.forms.ExpandedSignUpForm"
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "/accounts/profile"
 LOGIN_REDIRECT_URL = "/"
 
-ALLOWED_HOSTS = ["192.168.0.199", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["django-project-8i6g.onrender.com", "localhost"]
