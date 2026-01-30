@@ -18,9 +18,12 @@ Including another URLconf
 from django.contrib import admin
 from .settings import DEBUG
 from django.urls import path, include
+from django.views.generic.base import RedirectView
+from django.templatetags.static import static
 
 urlpatterns = [
     path("", include("pwa.urls")),
+    path('.well-known/assetlinks.json', RedirectView.as_view(url=static('assetlinks.json'))),
     path("admin/", admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("accounts/profile/", include("apps.users.urls")),
